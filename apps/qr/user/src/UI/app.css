@@ -891,10 +891,10 @@ span.placeholder.gamma {
     top: 150px;
     width: 250px;
     height: 250px;
-    outline: 100vh solid hsla(0, 0%, 0%, 0.7);
+    /* outline: 100vh solid hsla(0, 0%, 0%, 0.7); */
     border-radius: 25px;
     -moz-outline-radius: 25px;
-    /* box-shadow: 0 0 10px 35px hsl(139, 47%, 44%); */
+    box-shadow: 0 0 0 100vh hsla(0, 0%, 0%, 0.7);
     z-index: 10;
 }
 
