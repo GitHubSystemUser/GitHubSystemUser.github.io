@@ -9,6 +9,7 @@ let state = false;
 // })
 
 document.querySelector("#jdfshhfqiuh").addEventListener("click", (event) => {
+    document.querySelector(".scanner-layout").classList.toggle("enabled")
     document.querySelectorAll(".scanner-cornerpoint").forEach((e) => e.classList.toggle("enabled"))
 })
 

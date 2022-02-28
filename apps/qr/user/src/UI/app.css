@@ -898,6 +898,10 @@ span.placeholder.gamma {
     z-index: 10;
 }
 
+.scanner-layout.enabled {
+    padding: 16px;
+}
+
 .widget-scanner-layout .screen-layout-view {
     position: relative;
     background-color: hsl(0, 0%, 84%);
