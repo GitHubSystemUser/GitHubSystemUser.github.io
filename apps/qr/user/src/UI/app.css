@@ -893,6 +893,7 @@ span.placeholder.gamma {
     height: 250px;
     outline: 100vh solid hsla(0, 0%, 0%, 0.7);
     border-radius: 25px;
+    -moz-outline-radius: 25px;
     /* box-shadow: 0 0 10px 35px hsl(139, 47%, 44%); */
     z-index: 10;
 }
