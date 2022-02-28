@@ -1158,6 +1158,7 @@ main {
     /* transition: transform 210ms cubic-bezier(1, 0, 0.8, 1); */
     overflow: hidden;
     background: #202225;
+    background-color: var(--background-mobile-primary);
 }
 
 main.alpha {
