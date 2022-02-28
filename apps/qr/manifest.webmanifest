@@ -1,0 +1,29 @@
+{
+    "short_name": "QR",
+    "name": "QRCode-App",
+    "description": "description",
+    "lang": "en-US",
+    "icons": [
+        {
+            "src": "/src/ressources/App/logos/App[192].png",
+            "type": "image/png",
+            "sizes": "192x192",
+            "purpose": "any"
+        },
+        {
+            "src": "/src/ressources/App/logos/App[512].png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any"
+        }
+    ],
+    "start_url": ".",
+    "background_color": "#7289DA",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#7289DA",
+    "orientation": "portrait-primary",
+    "shortcuts": [
+        
+    ]
+}
