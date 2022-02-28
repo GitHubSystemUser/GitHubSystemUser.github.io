@@ -19,9 +19,9 @@ if(("BarcodeDetector" in window)) {
     const videoStream = document.querySelector(".video-stream");
 
     if(barcodeDetector) {
-        alert("BarcodeDetector is supported.")
+        console.log("BarcodeDetector is supported.")
     } else {
-        alert("BarcodeDetector is not supported.")
+        console.log("BarcodeDetector is not supported.")
     }
 
     // scanner.getSupportedFormats().then((formats) => {
