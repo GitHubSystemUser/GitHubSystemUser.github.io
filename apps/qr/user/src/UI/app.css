@@ -892,7 +892,7 @@ span.placeholder.gamma {
     width: 250px;
     height: 250px;
     outline: 100vh solid hsla(0, 0%, 0%, 0.7);
-    border-radius: 50px;
+    border-radius: 25px;
     /* box-shadow: 0 0 10px 35px hsl(139, 47%, 44%); */
     z-index: 10;
 }
@@ -940,7 +940,7 @@ span.placeholder.gamma {
     height: 100%;
     border-top: 3px solid var(--brand-experiment);
     border-left: 3px solid var(--brand-experiment);
-    border-radius: 50px 0 0 0;
+    border-radius: 25px 0 0 0;
     transition: 300ms ease;
 }
 
