@@ -1156,6 +1156,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
     height: 100%;
     transform: none;
     /* transition: transform 210ms cubic-bezier(1, 0, 0.8, 1); */
