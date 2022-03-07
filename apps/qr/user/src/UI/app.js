@@ -735,6 +735,43 @@ document.querySelectorAll("[data-screen-layout-back-button]").forEach((element) 
 });
 
 
+
+document.querySelectorAll("[data-screen-layout-close-button]").forEach((element) => {
+    element.addEventListener("click", () => {
+        const screenLayout = element.closest(".screen-layout");
+        if (screenLayout == null) return;
+
+        try {
+            switch (screenLayout.dataset.screenLayoutStyle) {
+                case "alpha":
+                    screenLayout.style.setProperty("animation", "screenLayoutDisabled 200ms cubic-bezier(1, 0, 0.8, 1) forwards");
+                    screenLayout.addEventListener("animationend", function handler() {
+                        screenLayout.classList.remove("enabled");
+                        screenLayout.removeEventListener("animationend", handler, true)
+                    }, true);
+                    break;
+                case "beta":
+                    screenLayout.style.setProperty("animation", "none");
+                    screenLayout.classList.remove("enabled");
+                    break;
+
+                default:
+                    break;
+            }
+
+            document.querySelector("main").classList.remove(...["alpha", "beta", "gamma"]);
+        } catch (error) {
+            console.error(error);
+            return AK81JO3R0001325823571263488(true);
+        }
+    });
+});
+
+
+
+
+
+
 // document.querySelectorAll("[data-tab-target]").forEach(tab => {
 //     tab.addEventListener("click", () => {
 //         let stageStatus = new Status("RIP Stage Discovery :(", null);

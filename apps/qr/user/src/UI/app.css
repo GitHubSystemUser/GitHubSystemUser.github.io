@@ -911,6 +911,7 @@ span.placeholder.gamma {
     background-color: var(--brand-experiment);
     border-radius: 50%;
     z-index: 10;
+    pointer-events: none;
 }
 
 .scan:active {
@@ -921,6 +922,7 @@ span.placeholder.gamma {
 .scan.enabled {
     opacity: 1;
     animation: breathing 1s ease infinite;
+    pointer-events: all;
 }
 
 @keyframes breathing {
