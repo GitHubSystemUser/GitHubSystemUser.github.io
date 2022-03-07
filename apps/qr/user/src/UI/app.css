@@ -902,6 +902,11 @@ span.placeholder.gamma {
     padding: 16px;
 }
 
+.scan {
+    width: 50px;
+    height: 50px;
+}
+
 .widget-scanner-layout .screen-layout-view {
     position: relative;
     background-color: hsl(0, 0%, 84%);
@@ -981,8 +986,6 @@ span.placeholder.gamma {
 }
 
 .scan-btn {
-    position: fixed;
-    bottom: 0;
     width: 300px;
     height: 50px;
     border: 3px solid var(--brand-experiment);
