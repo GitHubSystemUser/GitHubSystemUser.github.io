@@ -913,6 +913,11 @@ span.placeholder.gamma {
     z-index: 10;
 }
 
+.scan:active {
+    animation: none;
+    transform: scale(0.8);
+}
+
 .scan.enabled {
     opacity: 1;
     animation: breathing 1s ease infinite;
