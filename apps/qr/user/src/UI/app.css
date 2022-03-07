@@ -904,6 +904,9 @@ span.placeholder.gamma {
 
 .scan {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     bottom: 65px;
     width: 60px;
     height: 60px;
@@ -911,6 +914,8 @@ span.placeholder.gamma {
     background-color: var(--brand-experiment);
     border-radius: 50%;
     z-index: 10;
+    opacity: 0.3;
+    transition: 200ms;
     pointer-events: none;
 }
 
@@ -1013,10 +1018,15 @@ span.placeholder.gamma {
 }
 
 .scan-btn {
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    right: 0;
     width: 300px;
     height: 50px;
     border: 3px solid var(--brand-experiment);
     border-radius: 10px;
+    margin: 0 auto;
     z-index: 1;
 }
 
