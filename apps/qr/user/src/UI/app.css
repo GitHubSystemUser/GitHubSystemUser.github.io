@@ -889,8 +889,8 @@ span.placeholder.gamma {
 .scanner-layout {
     position: absolute;
     top: 150px;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     /* outline: 100vh solid hsla(0, 0%, 0%, 0.7); */
     border-radius: 25px;
     -moz-outline-radius: 25px;
@@ -911,6 +911,20 @@ span.placeholder.gamma {
     background-color: var(--brand-experiment);
     border-radius: 50%;
     z-index: 10;
+}
+
+.scan.enabled {
+    opacity: 1;
+    animation: breathing 1s ease infinite;
+}
+
+@keyframes breathing {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 .widget-scanner-layout .screen-layout-view {
