@@ -1086,6 +1086,10 @@ span.placeholder.gamma {
     }
 }
 
+.scan-result-view section {
+    
+}
+
 .error-page {
     position: fixed;
     top: 0;
