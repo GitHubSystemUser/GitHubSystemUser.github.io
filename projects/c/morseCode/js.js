@@ -25,16 +25,16 @@ const morseCode = {
     x: "-..-", 
     y: "-.--", 
     z: "--..", 
-    zero: { code: "-----", key: 0 },
-    one: { code: ".----", key: 1 },
-    two: { code: "..---", key: 2 },
-    three: { code: "...--", key: 3 },
-    four: { code: "....-", key: 4 },
-    five: { code: ".....", key: 5 },
-    six: { code: "-....", key: 6 },
-    seven: { code: "--...", key: 7 },
-    eight: { code: "---..", key: 8 },
-    nine: { code: "----.", key: 9 }
+    zero: { code: "-----", value: 0 },
+    one: { code: ".----", value: 1 },
+    two: { code: "..---", value: 2 },
+    three: { code: "...--", value: 3 },
+    four: { code: "....-", value: 4 },
+    five: { code: ".....", value: 5 },
+    six: { code: "-....", value: 6 },
+    seven: { code: "--...", value: 7 },
+    eight: { code: "---..", value: 8 },
+    nine: { code: "----.", value: 9 }
 };
 
 

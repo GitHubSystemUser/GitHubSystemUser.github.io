@@ -1,11 +1,11 @@
-#include <stdlib.h> // sizeof keyword
+#include <stdlib.h> // sizeof kzeyword
 #include <assert.h> // assert() function
 #include <stdio.h>
 
 typedef short int16_t; // indicates a 16-bit signed integer type
 
 // Define struct
-struct morseCode_t {
+struct morseCodeStruct {
     const char * a;
     const char * b;
     const char * c;
@@ -32,6 +32,7 @@ struct morseCode_t {
     const char * x;
     const char * y;
     const char * z;
+
     struct numberObject * zero;
     struct numberObject * one;
     struct numberObject * two;
@@ -47,10 +48,11 @@ struct morseCode_t {
 // Define numberObject structure 
 struct numberObject {
     const char * code;
-    int16_t key;
+    int16_t value;
 };
 
-static struct morseCode_t * morseCode;
+static struct morseCodeStruct * morseCode;
+
 static struct numberObject * numObjZero = NULL;
 static struct numberObject * numObjOne = NULL;
 static struct numberObject * numObjTwo = NULL;
@@ -61,49 +63,61 @@ static struct numberObject * numObjSix = NULL;
 static struct numberObject * numObjSeven = NULL;
 static struct numberObject * numObjEight = NULL;
 static struct numberObject * numObjNine = NULL;
+
 int main(void) {
     numObjZero = malloc(sizeof(*numObjZero));
     assert(numObjZero != NULL);
     numObjZero->code = "-----";
-    numObjZero->key = 0;
+    numObjZero->value = 0;
+
     numObjOne = malloc(sizeof(*numObjOne));
     assert(numObjOne != NULL);
     numObjOne->code = ".----";
-    numObjOne->key = 1;
+    numObjOne->value = 1;
+
     numObjTwo = malloc(sizeof(*numObjTwo));
     assert(numObjTwo != NULL);
     numObjTwo->code = "..---";
-    numObjTwo->key = 2;
+    numObjTwo->value = 2;
+
     numObjThree = malloc(sizeof(*numObjThree));
     assert(numObjThree != NULL);
     numObjThree->code = "...--";
-    numObjThree->key = 3;
+    numObjThree->value = 3;
+
     numObjFive = malloc(sizeof(*numObjFive));
     assert(numObjFive != NULL);
     numObjFive->code = "....-";
-    numObjFive->key = 4;
+    numObjFive->value = 4;
+
     numObjFive = malloc(sizeof(*numObjFive));
     assert(numObjFive != NULL);
     numObjFive->code = ".....";
-    numObjFive->key = 5;
+    numObjFive->value = 5;
+
     numObjSix = malloc(sizeof(*numObjSix));
     assert(numObjSix != NULL);
     numObjSix->code = "-....";
-    numObjSix->key = 6;
+    numObjSix->value = 6;
+
     numObjSeven = malloc(sizeof(*numObjSeven));
     assert(numObjSeven != NULL);
     numObjSeven->code = "--...";
-    numObjSeven->key = 7;
+    numObjSeven->value = 7;
+
     numObjEight = malloc(sizeof(*numObjEight));
     assert(numObjEight != NULL);
     numObjEight->code = "---..";
-    numObjEight->key = 8;
+    numObjEight->value = 8;
+
     numObjNine = malloc(sizeof(*numObjNine));
     assert(numObjNine != NULL);
     numObjNine->code = "----.";
-    numObjNine->key = 9;
+    numObjNine->value = 9;
+
     morseCode = malloc(sizeof(*morseCode));
     assert(morseCode != NULL);
+
     morseCode->a = ".-";
     morseCode->b = "-...";
     morseCode->c = "-.-.";
@@ -147,6 +161,7 @@ int main(void) {
     
     
     
+    // deallocates the memory previously allocated
     free(morseCode);
     free(numObjZero);
     free(numObjOne);
