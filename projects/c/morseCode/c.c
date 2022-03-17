@@ -4,6 +4,8 @@
 
 typedef short int16_t; // indicates a 16-bit signed integer type
 
+char userInput[1];
+
 // Define struct
 struct morseCodeStruct {
     const char * a;
@@ -158,6 +160,10 @@ int main(void) {
 
     printf("%s\n", morseCode->s);
     printf("%s\n", morseCode->six->code);
+
+    printf("=> ");
+    scanf("%s", userInput);
+    printf("\n%s", userInput);
     
     
     
@@ -167,7 +173,7 @@ int main(void) {
     free(numObjOne);
     free(numObjTwo);
     free(numObjThree);
-    free(numObjFive);
+    free(numObjFour);
     free(numObjFive);
     free(numObjSix);
     free(numObjSeven);
