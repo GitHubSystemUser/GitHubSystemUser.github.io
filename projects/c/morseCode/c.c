@@ -2,8 +2,9 @@
 #include <assert.h> // assert() function
 #include <stdio.h>
 
-typedef short int16_t;
+typedef short int16_t; // indicates a 16-bit signed integer type
 
+// Define struct
 struct morseCode_t {
     const char * a;
     const char * b;
@@ -42,63 +43,65 @@ struct morseCode_t {
     struct numberObject * eight;
     struct numberObject * nine;
 };
+
+// Define numberObject structure 
 struct numberObject {
     const char * code;
     int16_t key;
 };
 
 static struct morseCode_t * morseCode;
-static struct numberObject * tmp_obj = NULL;
-static struct numberObject * tmp_obj_2 = NULL;
-static struct numberObject * tmp_obj_3 = NULL;
-static struct numberObject * tmp_obj_4 = NULL;
-static struct numberObject * tmp_obj_5 = NULL;
-static struct numberObject * tmp_obj_6 = NULL;
-static struct numberObject * tmp_obj_7 = NULL;
-static struct numberObject * tmp_obj_8 = NULL;
-static struct numberObject * tmp_obj_9 = NULL;
-static struct numberObject * tmp_obj_10 = NULL;
+static struct numberObject * numObjZero = NULL;
+static struct numberObject * numObjOne = NULL;
+static struct numberObject * numObjTwo = NULL;
+static struct numberObject * numObjThree = NULL;
+static struct numberObject * numObjFour = NULL;
+static struct numberObject * numObjFive = NULL;
+static struct numberObject * numObjSix = NULL;
+static struct numberObject * numObjSeven = NULL;
+static struct numberObject * numObjEight = NULL;
+static struct numberObject * numObjNine = NULL;
 int main(void) {
-    tmp_obj = malloc(sizeof(*tmp_obj));
-    assert(tmp_obj != NULL);
-    tmp_obj->code = "-----";
-    tmp_obj->key = 0;
-    tmp_obj_2 = malloc(sizeof(*tmp_obj_2));
-    assert(tmp_obj_2 != NULL);
-    tmp_obj_2->code = ".----";
-    tmp_obj_2->key = 1;
-    tmp_obj_3 = malloc(sizeof(*tmp_obj_3));
-    assert(tmp_obj_3 != NULL);
-    tmp_obj_3->code = "..---";
-    tmp_obj_3->key = 2;
-    tmp_obj_4 = malloc(sizeof(*tmp_obj_4));
-    assert(tmp_obj_4 != NULL);
-    tmp_obj_4->code = "...--";
-    tmp_obj_4->key = 3;
-    tmp_obj_5 = malloc(sizeof(*tmp_obj_5));
-    assert(tmp_obj_5 != NULL);
-    tmp_obj_5->code = "....-";
-    tmp_obj_5->key = 4;
-    tmp_obj_6 = malloc(sizeof(*tmp_obj_6));
-    assert(tmp_obj_6 != NULL);
-    tmp_obj_6->code = ".....";
-    tmp_obj_6->key = 5;
-    tmp_obj_7 = malloc(sizeof(*tmp_obj_7));
-    assert(tmp_obj_7 != NULL);
-    tmp_obj_7->code = "-....";
-    tmp_obj_7->key = 6;
-    tmp_obj_8 = malloc(sizeof(*tmp_obj_8));
-    assert(tmp_obj_8 != NULL);
-    tmp_obj_8->code = "--...";
-    tmp_obj_8->key = 7;
-    tmp_obj_9 = malloc(sizeof(*tmp_obj_9));
-    assert(tmp_obj_9 != NULL);
-    tmp_obj_9->code = "---..";
-    tmp_obj_9->key = 8;
-    tmp_obj_10 = malloc(sizeof(*tmp_obj_10));
-    assert(tmp_obj_10 != NULL);
-    tmp_obj_10->code = "----.";
-    tmp_obj_10->key = 9;
+    numObjZero = malloc(sizeof(*numObjZero));
+    assert(numObjZero != NULL);
+    numObjZero->code = "-----";
+    numObjZero->key = 0;
+    numObjOne = malloc(sizeof(*numObjOne));
+    assert(numObjOne != NULL);
+    numObjOne->code = ".----";
+    numObjOne->key = 1;
+    numObjTwo = malloc(sizeof(*numObjTwo));
+    assert(numObjTwo != NULL);
+    numObjTwo->code = "..---";
+    numObjTwo->key = 2;
+    numObjThree = malloc(sizeof(*numObjThree));
+    assert(numObjThree != NULL);
+    numObjThree->code = "...--";
+    numObjThree->key = 3;
+    numObjFive = malloc(sizeof(*numObjFive));
+    assert(numObjFive != NULL);
+    numObjFive->code = "....-";
+    numObjFive->key = 4;
+    numObjFive = malloc(sizeof(*numObjFive));
+    assert(numObjFive != NULL);
+    numObjFive->code = ".....";
+    numObjFive->key = 5;
+    numObjSix = malloc(sizeof(*numObjSix));
+    assert(numObjSix != NULL);
+    numObjSix->code = "-....";
+    numObjSix->key = 6;
+    numObjSeven = malloc(sizeof(*numObjSeven));
+    assert(numObjSeven != NULL);
+    numObjSeven->code = "--...";
+    numObjSeven->key = 7;
+    numObjEight = malloc(sizeof(*numObjEight));
+    assert(numObjEight != NULL);
+    numObjEight->code = "---..";
+    numObjEight->key = 8;
+    numObjNine = malloc(sizeof(*numObjNine));
+    assert(numObjNine != NULL);
+    numObjNine->code = "----.";
+    numObjNine->key = 9;
     morseCode = malloc(sizeof(*morseCode));
     assert(morseCode != NULL);
     morseCode->a = ".-";
@@ -127,29 +130,34 @@ int main(void) {
     morseCode->x = "-..-";
     morseCode->y = "-.--";
     morseCode->z = "--..";
-    morseCode->zero = tmp_obj;
-    morseCode->one = tmp_obj_2;
-    morseCode->two = tmp_obj_3;
-    morseCode->three = tmp_obj_4;
-    morseCode->four = tmp_obj_5;
-    morseCode->five = tmp_obj_6;
-    morseCode->six = tmp_obj_7;
-    morseCode->seven = tmp_obj_8;
-    morseCode->eight = tmp_obj_9;
-    morseCode->nine = tmp_obj_10;
+    morseCode->zero = numObjZero;
+    morseCode->one = numObjOne;
+    morseCode->two = numObjTwo;
+    morseCode->three = numObjThree;
+    morseCode->four = numObjFive;
+    morseCode->five = numObjFive;
+    morseCode->six = numObjSix;
+    morseCode->seven = numObjSeven;
+    morseCode->eight = numObjEight;
+    morseCode->nine = numObjNine;
+
+
     printf("%s\n", morseCode->s);
     printf("%s\n", morseCode->six->code);
+    
+    
+    
     free(morseCode);
-    free(tmp_obj);
-    free(tmp_obj_2);
-    free(tmp_obj_3);
-    free(tmp_obj_4);
-    free(tmp_obj_5);
-    free(tmp_obj_6);
-    free(tmp_obj_7);
-    free(tmp_obj_8);
-    free(tmp_obj_9);
-    free(tmp_obj_10);
+    free(numObjZero);
+    free(numObjOne);
+    free(numObjTwo);
+    free(numObjThree);
+    free(numObjFive);
+    free(numObjFive);
+    free(numObjSix);
+    free(numObjSeven);
+    free(numObjEight);
+    free(numObjNine);
 
     return 0;
 }
