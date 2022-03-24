@@ -2,15 +2,22 @@
 #include <string.h>
 #include <assert.h> // assert() function
 #include <stdio.h>
+#include <time.h>
+
 
 typedef short int16_t; // indicates a 16-bit signed integer type
 
-char userInput[0];
-char selectMenu[1];
+char userInput[];
+char selectMenu[];
 
 void clear() {
     system("clear");
 }
+
+int intToAscii(int number) {
+   return '0' + number;
+}
+
 
 // Define struct
 struct morseCodeStruct {
@@ -170,13 +177,12 @@ int main(void) {
     //printf("The quick brown fox jumps over the lazy dog\n\n");
 
     printf("[ ]\n\nSelect:\n [0]: MorseCode\n [1]: Binaire\n [2]: Hexadecimal\n [3]: Password Generator\n\n");
-    
-
     printf("[0/3] => ");
     scanf("%s", selectMenu);
 
    if (strcmp(selectMenu, "0") == 0) {
         clear();
+
         printf("[MorseCode]\n\nSelect:\n [0]: String to MorseCode\n [1]: MorseCode to String\n\n");
         printf("[0/1] => ");
         scanf("%s", selectMenu);
@@ -192,7 +198,7 @@ int main(void) {
         for (; i < length; i++) {
             printf("%c\n", userInput[i]);
             if(strcmp(&userInput[i], "i") == 0)
-                printf("%s\n", morseCode->i);
+                printf("%s\n", morseCode->a);
         }
        }
        if (strcmp(selectMenu, "1") == 0) {
@@ -200,27 +206,37 @@ int main(void) {
             printf("[MorseCode > MorseCode to String]\n\n");
             printf("\n=> ");
             scanf("%s", userInput);
-           clear();
+            clear();
        }
    } else if (strcmp(selectMenu, "1") == 0) {
-       clear();
+        clear();
         printf("[Binaire]\n\n");
         printf("\n=> ");
    } else if (strcmp(selectMenu, "2") == 0) {
-       clear();
+        clear();
         printf("[HEX]\n\n");
         printf("\n=> ");
    } else if (strcmp(selectMenu, "3") == 0) {
-       clear();
+        clear();
         printf("[PW]\n\n");
-        printf("\n=> ");
+        srand(time(NULL));
+        char password[];
+
+        char test = random;
+        // int random = rand();
+        //printf("%c %d", testInt, testInt);
+       for(int i = 0; i <= 15; i++) {
+           int upperCaseInt = (rand() % (90 - 65 + 1)) + 65;
+           int lowerCaseInt = (rand() % (122 - 97 + 1)) + 97;
+           printf("UpperCase: %c %d\n", upperCaseInt, upperCaseInt);
+           printf("LowerCase: %c %d\n", lowerCaseInt, lowerCaseInt);
+       }
    } else {
        main();
    }
-    
 
-    
-        
+
+
     // printf("\n%s\n", userInput);
 
     //size_t i = 0;
@@ -229,12 +245,13 @@ int main(void) {
     //    i++;
     //}
 
-    
+
 
 
 
     // deallocates the memory previously allocated
-    /* free(morseCode);
+    /*
+    free(morseCode);
     free(numObjZero);
     free(numObjOne);
     free(numObjTwo);
@@ -245,7 +262,7 @@ int main(void) {
     free(numObjSeven);
     free(numObjEight);
     free(numObjNine);
-        */
+    */
 
     return 0;
 }
