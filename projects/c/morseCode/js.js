@@ -43,7 +43,9 @@ const morseCode = {
 
 
 
+let selectMenu = "0";
 
+if(selectMenu === "0") return;
 
 
 

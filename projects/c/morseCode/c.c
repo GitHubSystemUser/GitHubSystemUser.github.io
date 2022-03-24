@@ -166,16 +166,25 @@ int main(void) {
 
     //printf("%s\n", morseCode->s);
     //printf("%s\n", morseCode->six->code);
+    clear();
+    //printf("The quick brown fox jumps over the lazy dog\n\n");
+
+    printf("[?]\n\nSelect:\n [0]: MorseCode\n [1]: Binaire\n [1]: Binaire\n [2]: Hexadecimal\n [3]: Password Generator\n\n");
     
-    printf("The quick brown fox jumps over the lazy dog\n\n");
 
-    printf("Select:\n [0]: String to MorseCode\n [1]: MorseCode to String\n\n");
-
-    printf("[0/1] => ");
+    printf("[0/3] => ");
     scanf("%s", selectMenu);
 
-    if(*selectMenu == "0") {
-        printf("=> ");
+   if (strcmp(selectMenu, "0") == 0) {
+        clear();
+        printf("[MorseCode]\n\nSelect:\n [0]: String to MorseCode\n [1]: MorseCode to String\n\n");
+        printf("[0/1] => ");
+        scanf("%s", selectMenu);
+       
+        if (strcmp(selectMenu, "0") == 0) {
+            clear();
+            printf("[MorseCode > String to MorseCode]\n\n");
+            printf("\n=> ");
         scanf("%s", userInput);
 
         size_t length = strlen(userInput);
@@ -183,8 +192,15 @@ int main(void) {
         for (; i < length; i++) {
             printf("%c\n", userInput[i]);
         }
-
-    }
+       }
+       if (strcmp(selectMenu, "1") == 0) {
+            clear();
+            printf("[MorseCode > MorseCode to String]\n\n");
+            printf("\n=> ");
+            scanf("%s", userInput);
+       }
+   }
+        
     printf("\n%s\n", userInput);
 
     //size_t i = 0;
