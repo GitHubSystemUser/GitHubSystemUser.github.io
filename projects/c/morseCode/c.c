@@ -169,7 +169,7 @@ int main(void) {
     clear();
     //printf("The quick brown fox jumps over the lazy dog\n\n");
 
-    printf("[?]\n\nSelect:\n [0]: MorseCode\n [1]: Binaire\n [1]: Binaire\n [2]: Hexadecimal\n [3]: Password Generator\n\n");
+    printf("[ ]\n\nSelect:\n [0]: MorseCode\n [1]: Binaire\n [2]: Hexadecimal\n [3]: Password Generator\n\n");
     
 
     printf("[0/3] => ");
@@ -191,6 +191,8 @@ int main(void) {
         size_t i = 0; 
         for (; i < length; i++) {
             printf("%c\n", userInput[i]);
+            if(strcmp(&userInput[i], "i") == 0)
+                printf("%s\n", morseCode->i);
         }
        }
        if (strcmp(selectMenu, "1") == 0) {
@@ -198,10 +200,28 @@ int main(void) {
             printf("[MorseCode > MorseCode to String]\n\n");
             printf("\n=> ");
             scanf("%s", userInput);
+           clear();
        }
+   } else if (strcmp(selectMenu, "1") == 0) {
+       clear();
+        printf("[Binaire]\n\n");
+        printf("\n=> ");
+   } else if (strcmp(selectMenu, "2") == 0) {
+       clear();
+        printf("[HEX]\n\n");
+        printf("\n=> ");
+   } else if (strcmp(selectMenu, "3") == 0) {
+       clear();
+        printf("[PW]\n\n");
+        printf("\n=> ");
+   } else {
+       main();
    }
+    
+
+    
         
-    printf("\n%s\n", userInput);
+    // printf("\n%s\n", userInput);
 
     //size_t i = 0;
     //while (userInput[i] != '\0') {       /* Stop looping when we reach the null-character. */
@@ -214,7 +234,7 @@ int main(void) {
 
 
     // deallocates the memory previously allocated
-    free(morseCode);
+    /* free(morseCode);
     free(numObjZero);
     free(numObjOne);
     free(numObjTwo);
@@ -225,6 +245,7 @@ int main(void) {
     free(numObjSeven);
     free(numObjEight);
     free(numObjNine);
+        */
 
     return 0;
 }
