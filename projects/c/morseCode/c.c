@@ -14,10 +14,6 @@ void clear() {
     system("clear");
 }
 
-int intToAscii(int number) {
-   return '0' + number;
-}
-
 
 // Define struct
 struct morseCodeStruct {
@@ -220,17 +216,18 @@ int main(void) {
         clear();
         printf("[PW]\n\n");
         srand(time(NULL));
-        char password[];
+        static const char * password;
 
-        char test = random;
         // int random = rand();
         //printf("%c %d", testInt, testInt);
-       for(int i = 0; i <= 15; i++) {
+       for(int i = 0; i <= 1; i++) {
            int upperCaseInt = (rand() % (90 - 65 + 1)) + 65;
            int lowerCaseInt = (rand() % (122 - 97 + 1)) + 97;
            printf("UpperCase: %c %d\n", upperCaseInt, upperCaseInt);
            printf("LowerCase: %c %d\n", lowerCaseInt, lowerCaseInt);
+           password = "+ upperCaseInt + lowerCaseInt";
        }
+       printf("%s", password);
    } else {
        main();
    }
