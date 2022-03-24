@@ -1,10 +1,16 @@
 #include <stdlib.h> // sizeof kzeyword
+#include <string.h>
 #include <assert.h> // assert() function
 #include <stdio.h>
 
 typedef short int16_t; // indicates a 16-bit signed integer type
 
-char userInput[1];
+char userInput[0];
+char selectMenu[1];
+
+void clear() {
+    system("clear");
+}
 
 // Define struct
 struct morseCodeStruct {
@@ -158,15 +164,39 @@ int main(void) {
     morseCode->nine = numObjNine;
 
 
-    printf("%s\n", morseCode->s);
-    printf("%s\n", morseCode->six->code);
+    //printf("%s\n", morseCode->s);
+    //printf("%s\n", morseCode->six->code);
+    
+    printf("The quick brown fox jumps over the lazy dog\n\n");
 
-    printf("=> ");
-    scanf("%s", userInput);
-    printf("\n%s", userInput);
+    printf("Select:\n [0]: String to MorseCode\n [1]: MorseCode to String\n\n");
+
+    printf("[0/1] => ");
+    scanf("%s", selectMenu);
+
+    if(*selectMenu == "0") {
+        printf("=> ");
+        scanf("%s", userInput);
+
+        size_t length = strlen(userInput);
+        size_t i = 0; 
+        for (; i < length; i++) {
+            printf("%c\n", userInput[i]);
+        }
+
+    }
+    printf("\n%s\n", userInput);
+
+    //size_t i = 0;
+    //while (userInput[i] != '\0') {       /* Stop looping when we reach the null-character. */
+    //    printf("%c\n", userInput[i]);
+    //    i++;
+    //}
+
     
-    
-    
+
+
+
     // deallocates the memory previously allocated
     free(morseCode);
     free(numObjZero);
