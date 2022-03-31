@@ -47,6 +47,8 @@ if(("BarcodeDetector" in window)) {
                 // document.querySelector(".last").innerText = `Top: ${document.querySelector(".scanner-cornerpoint.alpha").style.top}, Left: ${document.querySelector(".scanner-cornerpoint.alpha").style.left}`
                 if(codes.length <= 0) return;
 
+                // https://www.digitalocean.com/community/tutorials/front-and-rear-camera-access-with-javascripts-getusermedia
+
                 const { top: codeTop, right: codeRight, bottom: codeBottom, left: codeLeft, width: codeWidth, height: codeHeight } = codes[0].boundingBox;
 
                 scannerFocus.style.setProperty("width", `${codeWidth}px`);
