@@ -1089,6 +1089,10 @@ span.placeholder.gamma {
 .scan-result-view section {
     
 }
+.scan-result-view video {
+    width: 100%;
+    height: auto;
+}
 
 .error-page {
     position: fixed;
