@@ -44,7 +44,7 @@ if(("BarcodeDetector" in window)) {
         let scannerFocus = document.querySelector(".scanner-focus");
         setInterval(async () => {
             barcodeDetector.detect(videoStream).then((codes) => {
-                document.querySelector(".last").innerText = `Top: ${document.querySelector(".scanner-cornerpoint.alpha").style.top}, Left: ${document.querySelector(".scanner-cornerpoint.alpha").style.left}`
+                // document.querySelector(".last").innerText = `Top: ${document.querySelector(".scanner-cornerpoint.alpha").style.top}, Left: ${document.querySelector(".scanner-cornerpoint.alpha").style.left}`
                 if(codes.length <= 0) return;
 
                 const { top: codeTop, right: codeRight, bottom: codeBottom, left: codeLeft, width: codeWidth, height: codeHeight } = codes[0].boundingBox;
@@ -69,7 +69,7 @@ if(("BarcodeDetector" in window)) {
                 // codes.forEach((code) => {
                 //     log(code);
                 // });
-                // alert(codes.map(code => code.rawValue));                
+                alert(codes.map(code => code.rawValue));                
             }).catch((error) => {
                 console.log(error);
             });
@@ -82,22 +82,22 @@ if(("BarcodeDetector" in window)) {
 }
 document.querySelector(".scan-btn").addEventListener("click", async () => {
     new ToastMessage("Received", { type: "success" }).send()
-    await barcodeDetector.detect(document.querySelector(".qr-code")).then( (codes) => {
-        if (codes.length <= 0) return;
+    // await barcodeDetector.detect(document.querySelector(".qr-code")).then( (codes) => {
+    //     if (codes.length <= 0) return;
 
-        alert(codes)
+    //     alert(codes)
 
-        const { top: codeTop, right: codeRight, bottom: codeBottom, left: codeLeft, width: codeWidth, height: codeHeight } = codes[0].boundingBox;
+    //     const { top: codeTop, right: codeRight, bottom: codeBottom, left: codeLeft, width: codeWidth, height: codeHeight } = codes[0].boundingBox;
 
-        squareElement.style.setProperty("width", `${codeWidth}px`);
-        squareElement.style.setProperty("height", `${codeHeight}px`);
-        squareElement.style.setProperty("top", `${codeTop}px`);
-        squareElement.style.setProperty("right", `${codeRight}px`);
-        squareElement.style.setProperty("bottom", `${codeBottom}px`);
-        squareElement.style.setProperty("left", `${codeLeft}px`);
-    }).catch((error) => {
-        console.log(error);
-    });
+    //     squareElement.style.setProperty("width", `${codeWidth}px`);
+    //     squareElement.style.setProperty("height", `${codeHeight}px`);
+    //     squareElement.style.setProperty("top", `${codeTop}px`);
+    //     squareElement.style.setProperty("right", `${codeRight}px`);
+    //     squareElement.style.setProperty("bottom", `${codeBottom}px`);
+    //     squareElement.style.setProperty("left", `${codeLeft}px`);
+    // }).catch((error) => {
+    //     console.log(error);
+    // });
 })
 
 log("Application initialised.");
