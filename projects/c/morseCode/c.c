@@ -14,6 +14,10 @@ void clear() {
     system("clear");
 }
 
+void Log(const char *str) {
+    printf(str);
+}
+
 
 // Define struct
 struct morseCodeStruct {
@@ -172,7 +176,7 @@ int main(void) {
     clear();
     //printf("The quick brown fox jumps over the lazy dog\n\n");
 
-    printf("[ ]\n\nSelect:\n [0]: MorseCode\n [1]: Binaire\n [2]: Hexadecimal\n [3]: Password Generator\n\n");
+    printf("\n[ ]\n\nSelect:\n [0]: MorseCode\n [1]: Binaire\n [2]: Hexadecimal\n [3]: Password Generator\n\n");
     printf("[0/3] => ");
     scanf("%s", selectMenu);
 
@@ -214,13 +218,20 @@ int main(void) {
         printf("\n=> ");
    } else if (strcmp(selectMenu, "3") == 0) {
         clear();
+
+        printf("[Password Generator]\n\nSelect:\n [0]: Generator\n [1]: Tester\n\n");
+        printf("[0/1] => ");
+        scanf("%s", selectMenu);
+       
+        if (strcmp(selectMenu, "0") == 0) {
+        // clear();
         printf("[PW]\n\n");
         srand(time(NULL));
         static const char * password;
 
         // int random = rand();
         //printf("%c %d", testInt, testInt);
-       for(int i = 0; i <= 1; i++) {
+       for(int i = 0; i <= 15; i++) {
            int upperCaseInt = (rand() % (90 - 65 + 1)) + 65;
            int lowerCaseInt = (rand() % (122 - 97 + 1)) + 97;
            printf("UpperCase: %c %d\n", upperCaseInt, upperCaseInt);
@@ -228,7 +239,19 @@ int main(void) {
            password = "+ upperCaseInt + lowerCaseInt";
        }
        printf("%s", password);
+        } else {
+            char passwordToTest[15];
+            clear();
+            printf("[PW]\n\n");
+            printf("=> ");
+            scanf("%s", passwordToTest);
+            printf("%d", strlen(passwordToTest));
+            if(strlen(passwordToTest) < 15) Log("Weak");
+        }
    } else {
+       clear();
+       printf("\n    CHOICE MUST BE A NUMBER BETWEEN 0 & 3\n");
+       sleep(2);
        main();
    }
 
