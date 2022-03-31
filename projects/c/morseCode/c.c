@@ -241,12 +241,20 @@ int main(void) {
        printf("%s", password);
         } else {
             char passwordToTest[15];
+            char userName[15];
+            char userFamilyName[15];
             clear();
             printf("[PW]\n\n");
-            printf("=> ");
+            printf("Input your password => ");
             scanf("%s", passwordToTest);
+            printf("Input your name => ");
+            scanf("%s", userName);
+            printf("Input your family name => ");
+            scanf("%s", userFamilyName);
             printf("%d", strlen(passwordToTest));
             if(strlen(passwordToTest) < 15) Log("Weak");
+            if(strstr(passwordToTest, userName)) Log("Includes ur first name!");
+            if(strstr(passwordToTest, userFamilyName)) Log("Includes ur last name!");
         }
    } else {
        clear();
