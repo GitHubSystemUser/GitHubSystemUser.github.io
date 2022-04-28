@@ -84,9 +84,7 @@ int main(void) {
         printf("Item not found\n");
         main();
     }
-   }
-
-    if (strcmp(selectMenu, "0") == 1) {
+   } else if (strcmp(selectMenu, "0") == 1) {
         clear();
         int is_found=-1;
         float search_value;
@@ -109,9 +107,7 @@ int main(void) {
         printf("Item not found\n");
         main();
     }
-    }
-
-    if (strcmp(selectMenu, "0") == 2) {
+    } else if (strcmp(selectMenu, "0") == 2) {
         clear();
         int is_found=-1;
         char search_value[99];
@@ -134,9 +130,7 @@ int main(void) {
         printf("Item not found\n");
         main();
     }
-    }
-
-    if (strcmp(selectMenu, "0") == 3) {
+    } else if (strcmp(selectMenu, "0") == 3) {
         clear();
         int is_found=-1;
         char search_value[99];
@@ -159,9 +153,9 @@ int main(void) {
         printf("Item not found\n");
         main();
     }
-    }
+    } else {main();}
     
-    main();
+    
 
     
 
