@@ -344,6 +344,7 @@
 }
 
 html {
+    width: 100px;
     font-family: var(--font-primary);
     box-sizing: border-box;
     user-select: none;
